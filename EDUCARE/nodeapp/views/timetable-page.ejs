@@ -1,0 +1,80 @@
+<html>
+<head><br>
+   <title >time table</title> 
+   <br>
+</head>
+<br><br><br>
+<body style="background-image: url(https://images.pexels.com/photos/3892172/pexels-photo-3892172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); background-repeat:no-repeat; background-position:top; background-size:cover;" class="body">
+  <form method="post" action="/Timetable">
+<H1><FONT style="color: black;""><CENTER>TIME TABLE</FONT></H1>
+  <table border="6" style="border-color: rgb(128, 180, 38);" cellspacing="10" align="center">
+    <tr>
+ <th>DAYS\TIME
+ <th>8:30-9:30</th>
+ <th>9:30-10:30</th>
+ <th>10:3-11:30</th>
+ <th>11:30-12:30</th>
+ <th>12:30-2:00</th>
+ <th>2:00-3:00</th>
+ <th>3:00-4:00</th>
+ <th>4:00-5:00</th>
+ <th >UPDATE</th>
+</tr>
+<%  if(TimetableData.length!=0) { var i=1; TimetableData.forEach(function(data){  %>
+  <tr>
+    <b><td><input type="text" id="Days" name="Days" value="<%=data.Days %>"/></td></b>
+       <td><input type="text" value="<%=data.Period_1 %>"/></td>
+       <td><input type="text" value="<%=data.Period_2 %>"/></td>
+       <td><input type="text" value="<%=data.Period_3 %>"/></td>
+       <td><input type="text" value="<%=data.Period_4 %>"/></td>
+       <td><input type="text" value="<%=data.Period_5 %>"/></td>
+       <td><input type="text" value="<%=data.Period_6 %>"/></td>
+       <td><input type="text" value="<%=data.Period_7 %>"/></td>
+       <td><input type="text" value="<%=data.Period_8 %>"/></td>
+   
+       <td><a class="ui purple button" href="/Timetable/<%=data.Days%>">Edit</a></td>
+   </tr>
+  
+<%  i++; }) %>
+<% } else{ %>
+  <tr>
+      <td colspan="9">No Data Found</td>
+  </tr>
+<% } %>
+</table>
+</form>
+</body>
+<style>
+  table
+  {
+    width: 80%;
+  }
+  input
+  {
+    background-color:transparent;
+    text-align: center;
+    border: none;
+    width: 108px;
+    align-items: center;
+  }
+  th,td{
+    padding: 5px;
+    align-items: center;
+
+  }
+  a{
+  height: 19px;
+  width: 100px;
+  text-decoration: none;
+  color: #f7f1f7;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: green;
+  transition: all 0.3s ease;
+  align-items: center;
+}
+</style>
+
+</html>

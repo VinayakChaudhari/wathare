@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+
+</head>
+<body style="background-image: url(https://images.pexels.com/photos/3892172/pexels-photo-3892172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); background-repeat:no-repeat; background-position:top; background-size:cover;" class="body">
+  <br><br><br><br>
+<h1 style="text-align: center;">MY PROFILE</h1>
+<%  if(UserData.length!=0) { var i=1; UserData.forEach(function(data){  %>
+
+
+<table style="text-align: center;" onload="">
+  <tr>
+    <th>Profile</th>
+    <th>Details</th>
+  </tr>
+  <tr>
+    <td> Id No</td>
+    <td><input type="text" id="SrNo" name="SrNo" value="<%=data.SrNo %>"></td>
+  </tr>
+  <tr>
+    <td>Your Name</td>
+    <td><input type="text" id="name" name="name" value="<%=data.Name %>"></td>
+  </tr>
+  <tr>
+    <td>Your Adress</td>
+    <td><input type="text" id="Address" name="Address" value="<%=data.Address %>"></td>
+  </tr>
+  <tr id="dip">
+    <td>Diploma Percentage</td>
+    <td><input type="number" id="Marks" name="Marks" placeholder="Not Applicable for teachers" value="<%=data.Marks %>"></td>
+  </tr>
+  <tr>
+    <td>Branch</td>
+    <td><input type="text" id="Branch" name="Branch" value="<%=data.Branch %>"></td>
+  </tr>
+  <tr>
+    <td>Phone No</td>
+    <td><input type="number" id="PhoneNo" name="PhoneNo" value="<%=data.PhoneNo %>"></td>
+  </tr>
+  <tr>
+    <td>Email Address</td>
+    <td><input type="email" id="Email" name="Email" value="<%=data.Email %>"></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><input type="text" id="Gender" name="Gender" value="<%=data.Gender %>"></td>
+  </tr>
+  <tr>
+    <td>Date Of Birth</td>
+    <td><input type="text" id="DateofBirth" name="DateofBirth" value="<%= data.DateofBirth.toISOString().slice(0,10)%>"></td>
+  </tr> 
+  </tr>
+</table><br>
+<center>
+<div><a href="/Edit/<%=data.SrNo%>" >Update Profile</a></div>
+</center>
+
+<%  i++; }) }%>
+
+</body>
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgb(128, 180, 38);
+  }
+  tr:first-child
+    {
+      background-color: forestgreen;
+      color: rgb(239, 252, 234);
+      font-size: 22px;
+    }
+  .profile-details .admin_name{
+    text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+a{
+  height: 21px;
+  width: 60px;
+  text-decoration: none;
+  color: #f7f1f7;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: green;
+  transition: all 0.3s ease;
+}
+input
+    {
+      width: 300px;
+      height: 26px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+      background-color:transparent;
+
+    }
+  </style>
+
+</html>

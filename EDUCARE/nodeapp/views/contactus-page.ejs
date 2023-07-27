@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body style="background-image: url(https://img.freepik.com/free-vector/students-walking-relaxing-campus-park_1262-20690.jpg?t=st=1649254236~exp=1649254836~hmac=d33b70bcf10bdf20bbcf551394b230836f0600272d46baa51b72ac7557201f87&w=1060); background-repeat:no-repeat; background-position:top; background-size:cover;">
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#" style="font-size: 55px;">Educare</a>
+      </div>
+      <ul>
+        <li><a href="#" >Home</a></li>
+        <li><a href="/aboutus">About</a></li>
+        <li><a href="/contactus" class="active">Contact</a></li>
+        <li>
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="getbutton()" >
+               Registration
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="list" style="display:none;">
+              <a class="dropdown-item" href="/register">Student</a><br>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/teacherreg">Teacher </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title" style=font-size:30px;> 
+       <h3>&nbsp;&nbsp; Contact Details </h3><br><br>
+       <h6>
+        FutureTech Solutions, Survy No.80, Pune-Mumbai Bypass Highway,Tathawade, Pune 411033<br>
+
+        Tel: (020)-22933423, 22934344, 22934347, 22934084<br>
+
+        Telfax: (020)-22933424<br>
+        Mobile No : 9096363864<br><br>
+        
+        Corporate office Address:<br>
+        
+        FutureTech Solutions, Sawant Corner, S.No 84/2E/1/5, 3rd Floor, Katraj Chowk, Katraj, Pune 411046<br>
+        
+        Tel: 020- 24317383/84/85<br>
+        
+        TelFax: 020-24317389/24317369</h6></div>
+    <div class="sub_title"><h6></h6> </div>
+    <div class="btns">
+    </div>
+  </div>
+  <script>
+    function getbutton()
+  {
+    var list=document.getElementById("list");
+    list.style.display="list-item";
+    setInterval((close) =>
+   {
+    list.style.display="none";
+  }, 3000);
+
+  }
+  </script>
+</body>
+</html>

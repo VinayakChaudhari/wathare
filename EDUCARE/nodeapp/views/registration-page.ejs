@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <h2><%=(typeof alertMsg!='undefined')? alertMsg:''%></h2>
+
+</head>
+<body style="background-image: url(https://img.freepik.com/free-photo/abstract-blur-defocused-bookshelf-library_1203-9640.jpg?t=st=1649254236~exp=1649254836~hmac=abd864aef5ec6db37ac10059113b0619e0bf9f09416c18bec4d3cd9696547cbb&w=996); background-repeat:no-repeat; background-position:top; background-size:cover;" class="body">
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#" style="font-size: 55px;">Educare</a>
+      </div>
+      <ul>
+        <li><a href="/" >Home</a></li>
+        <li><a href="/aboutus">About</a></li>
+        <li><a href="/contactus">Contact</a></li>
+        <li>
+          <div class="dropdown show" id="myDIV">
+            <a class="active" class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="getbutton()" >
+            Registration
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="list" style="display:none;">
+              <a class="dropdown-item" href="/register">Student</a><br>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/teacherreg">Teacher </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container " style="border-top-left-radius: .8rem; border-top-right-radius: .8rem;">
+ 
+   <div class=" col-md-7 col-md-offset-3">
+       <div>
+        <br><br><br><br>
+       </div>
+       <div class="panel panel-primary">
+     
+        <div class="panel-heading " style="font-size: 35px; color: rgb(250, 250, 252) ;text-align: center; align-items: center;">
+          <img class=""  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK0_nXT268pjN2KK61kG6KYtlA5fIq8PXADQ&usqp=CAU" /> &nbsp;
+           <label >Student Registration Form</label> 
+         </div>
+           
+           <div class="panel-body needs-validation">
+               <form method="post"  action="register" onsubmit="message() ">
+                <div class="form-group ">
+                    <label for="name">Student Name :</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Student Name" required>
+                </div>
+                    <div class="form-group">
+                    <label for="Address">Student Address :</label>
+                    <input type="text" class="form-control" name="address" id="Address" placeholder="Enter Address" required>
+                </div>
+                   
+                
+                  <div  class="form-group">
+                    <label for="mark">Diploma Percentage :</label>
+                    <input type="number" class="form-control" name="mark" id="mark" placeholder="Enter Diploma Percentage" name="mark" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="branch">Branch :</label>
+                    <input type="text" class="form-control" name="branch"  id="branch"  placeholder="Enter Branch Name" required>
+                </div>
+                  <div class="form-group">
+                      <label for="PhoneNo">Phone No :</label>
+                      <input type="number" class="form-control" name="PhoneNo" id="PhoneNo" placeholder="Enter phone Number" required>
+                  </div>
+                  <div  class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password :</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required>
+                </div>
+               
+                  <div class="form-group">
+                    <label for=""> Gender :</label>&nbsp;&nbsp;
+                        <input type="radio" id="male" name="gender" value="male" ><label for="male" class="radio-inline" >Male </label> &nbsp;&nbsp;
+                        <input type="radio" id="Female" name="gender" value="female"><label for="Female" class="radio-inline" > Female</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="DateOfBirth"> &nbsp;&nbsp;Date of Birth :</label>
+                        <input type="date" class="form-control-inline" name="DateOfBirth" id="DateOfBirth" placeholder="yyyy-mm-dd" required>
+
+                    </div>
+                    
+                        <div class="form-group">
+                   
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" class="form-control-inline" id="check" required>
+                    <label for="check" >I hereby declare that the information Provided is true & correct, As per my best.</label>
+                </div>
+               
+                
+                <div class="form-group text-center" >
+                    <input type="submit" class="btn btn-primary">
+                </div>
+               </form>
+           </div>
+           <div class="panel-footer text-center ">
+               <p class="text-primary">&copy; JSPM'S BSIOTR</p>
+           </div>
+       </div>
+   </div>
+  </div>
+  
+</body>
+<script>
+    function message()
+    { 
+        var name=document.getElementById("name");
+        alert( name.value+" You Have Registerd Successfull." )
+        
+    }
+    function getbutton()
+  {
+    var list=document.getElementById("list");
+    list.style.display="list-item";
+    setInterval((close) =>
+   {
+    list.style.display="none";
+  }, 3000);
+  }
+  
+
+   
+   
+</script>
+</html>

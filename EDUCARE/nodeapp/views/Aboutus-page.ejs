@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body style="background-image: url(https://img.freepik.com/free-vector/students-walking-relaxing-campus-park_1262-20690.jpg?t=st=1649254236~exp=1649254836~hmac=d33b70bcf10bdf20bbcf551394b230836f0600272d46baa51b72ac7557201f87&w=1060); background-repeat:no-repeat; background-position:top; background-size:cover;">
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#" style="font-size: 55px;">Educare</a>
+      </div>
+      <ul>
+        <li><a href="/" >Home</a></li>
+        <li><a href="/aboutus" class="active">About</a></li>
+        <li><a href="/contactus">Contact</a></li>
+        <li>
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="getbutton()" >
+               Registration
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="list" style="display:none;">
+              <a class="dropdown-item" href="/register">Student</a><br>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/teacherreg">Teacher </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title" style=font-size:30px;><h2>About Educare</h2></div><br><br>
+    <div class="title" style=font-size:30px;><h6>Educare is a fully-fledged Academic management solution<br> that allows managing student profiles,<br>assignment details, course details, exams schedule,<br> classes schedule, feedback, and a lot more from a single dashboard.<br> It digitizes the daily chores of the education campus and <br>helps manage the administrative, academic, and non-academic activities hassle-free.</h6></div>
+    <div class="sub_title"><h6></h6> </div>
+    <div class="btns">
+    </div>
+  </div>
+</body>
+<script>
+  function getbutton()
+  {
+    var list=document.getElementById("list");
+    list.style.display="list-item";
+    setInterval((close) =>
+   {
+    list.style.display="none";
+  }, 3000);
+
+  }
+</script>
+</html>

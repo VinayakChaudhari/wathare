@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body style="background-image: url(https://images.unsplash.com/photo-1617891248223-2aef735b03d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80); background-repeat:unset; background-position:center; background-size:cover;" class="body">
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#" style="font-size: 55px; text-align: center; color: white;"></a>
+      </div>
+    </div>
+  </nav>
+  <form style="color: rgb(60, 89, 10);">
+  <div class="img"></div> <br><br>
+  <div class="center">
+    <div class="title" style="text-align: center;"><h1>About Educare</h1></div>
+    <div class="sub_title" style="text-align: center; font-size: 20px; color: rgb(204, 251, 201);" ><h2>
+        Educare is a fully-fledged Academic management solution that allows<br> managing student profiles, assignment details, course details, exams schedule,<br>  timetable, notice, anda lot more from a single dashboard. 
+        <br>It digitizes the daily chores of the education campus and <br>helps manage the administrative, academic, and non-academic activities hassle-free.
+        <br><br><center>
+        <table>
+          <tr>
+            <th> Project Developed By:</th>
+            <th rowspan="4"> <img id="developer" src="/images/Omkar Pimpaldohkar.jpg"  width="300px" height="250px" /></th>
+            <th>Under Guidance Of:</th>
+          </tr>
+          <tr>
+            <td>Omkar Pimpaldohkar </td>
+            <td> Prof.-: Diksha Nagpal</td>
+          </tr>
+          <tr>
+            <td>Hinge Rahul  </td>
+          </tr>
+          <tr>
+            <td> Vikrant Chaudhari  </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="text" id="devname" value="Omkar Pimpaldohkar"></h3></td>
+            <td></td>
+          </tr>
+        </table></center>
+
+    </h2> </div>
+    <div class="btns">
+    </div>
+</form>
+  </div>
+</body>
+<style>
+  img
+  {
+    align-items: flex-end;
+    place-items:initial;
+    border-radius: 8px;
+  }
+  table
+  {
+    text-align: center;
+    width: 78%;
+    color: rgb(104, 8, 97);
+  }
+  th{
+    font-weight:800;
+  }
+  td{
+    font-weight: 100;
+  }
+  input
+  {
+    color: rgb(47, 1, 58);
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    width: 300px;
+
+  }
+  h1{
+    color: white;
+    font-size: 48px;
+  }
+</style>
+<script>
+    var imagearray=['/images/Shubham Patole.jpg','/images/Omkar Pimpaldohkar.jpg','/images/Rahul_Hinge.jpg','/images/jspm logo.jpg'];  
+    var namearray=[" Mrs Diksha Ma'am","Omkar Pimpaldohkar","Rahul Hinge","Vikrant Chaudhary"];
+    var i=0;
+    function change()
+      {
+        var setimage=document.getElementById("developer");
+         setimage.setAttribute('src',imagearray[i]);
+
+         var setname=document.getElementById("devname");
+         setname.setAttribute('value',namearray[i]);
+        
+          i++;
+          if(i>=4)
+          {
+              i=0;
+          }
+  
+      }
+      //predefined
+      setInterval(change,5000);
+</script>
+</html>

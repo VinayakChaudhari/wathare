@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheets/dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+<form method="post" action="/dash_student">
+  <%  if(StudentData.length!=0) { var i=1; StudentData.forEach(function(data){  %>
+
+  <div class="sidebar" id="myDIV">
+    <div class="logo-details">
+      <i class='bx bx-book-open'></i>
+      <span class="logo_name">Educare</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="/Dash_Demo" class="btn active" target="showpage" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/myprofile/<%=data.Name%>" class="btn" target="showpage">
+            <i class='bx bx-user' ></i>
+            <span class="links_name" name="prof">My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Timetable" target="showpage" class="btn">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Timetable</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Attendance" target="showpage" class="btn">
+            <i class='bx bx-calendar' ></i>
+            <span class="links_name">Attendance</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Assignment" target="showpage" class="btn">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Assignments</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Courses" target="showpage" class="btn">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Courses</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Fees" target="showpage" class="btn">
+            <i class='bx bx-rupee' ></i>
+            <span class="links_name">Fees</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Exam" target="showpage" class="btn">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Exam Details</span>
+          </a>
+        </li>
+        <li>
+          <a href="/Notice" target="showpage" class="btn">
+            <i class='bx bx-envelope-open' ></i>
+            <span class="links_name">Notice</span>
+          </a>
+        </li>
+       <!--<li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li> -->
+      <li>
+        <a href="/login">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+        <!--<img src="images/profile.jpg" alt="">-->
+      <div class="profile-details">
+          <i class="bx bx-user-circle" ></i>
+        <span class="admin_name" name="logname"><%=data.Name %></span>
+        <i class='bx bx-chevron-down'></i>
+      </div>
+    </nav>
+      <iframe src="/Dash_Demo" width="100%" height="785px" name="showpage" style="align-items: center;">output</iframe>
+      </div>
+    </div>
+  </section>
+  <%  i++; }) }%>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+
+
+var btnContainer = document.getElementById("myDIV");
+var btns = btnContainer.getElementsByClassName("btn");
+
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+    this.className += " active";
+  });
+}
+ </script>
+</form>
+</body>
+</html>
+

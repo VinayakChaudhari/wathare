@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+</head><br><br><br><br>
+<body style="background-image: url(https://images.pexels.com/photos/3892172/pexels-photo-3892172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); background-repeat:no-repeat; background-position:top; background-size:cover;" class="body" >
+  
+  <form action="" method="post" >
+<h1 style="text-align: center;">Edit Details</h1><br>
+<%  if(UserData.length!=0) { var i=1; UserData.forEach(function(data){  %>
+
+<center>
+<table >
+  <tr>
+    <th>Profile</th>
+    <th>Details</th>
+  </tr>
+  <tr class="no">
+    <td> Id No</td>
+    <td><input type="text" id="SrNo" name="SrNo" value="<%=data.SrNo %>"></td>
+  </tr>
+  <tr>
+    <td> Name</td>
+    <td><input type="text" id="Name" name="Name" value="<%=data.Name %>"></td>
+  </tr>
+  <tr>
+    <td> Adress</td>
+    <td><input type="text" id="Address" name="Address" value="<%=data.Address %>"></td>
+  </tr>
+  <tr id="dip">
+    <td> Percentage</td>
+    <td><input type="number" id="Marks" name="Marks" placeholder="Not Applicable for teachers" value="<%=data.Marks %>"></td>
+  </tr>
+  <tr>
+    <td>Branch</td>
+    <td><input type="text" id="Branch" name="Branch" value="<%=data.Branch %>"></td>
+  </tr>
+  <tr>
+    <td>Phone No</td>
+    <td><input type="number" id="PhoneNo" name="PhoneNo" value="<%=data.PhoneNo %>"></td>
+  </tr>
+  <tr>
+    <td>Email Address</td>
+    <td><input type="email" id="Email" name="Email" value="<%=data.Email %>"></td>
+  </tr>
+  <tr>
+    <td>Password </td>
+    <td><input type="password" id="Password" name="Password" value="<%=data.Password %>"></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><input type="text" id="Gender" name="Gender" value="<%=data.Gender %>"></td>
+  </tr>
+  <!--<%=date=data.DateofBirth.toISOString().slice(0,10)%>-->
+  <span style="display:none;">
+  <%=date=new Date(data.DateofBirth.toISOString().slice(0,10));%>
+  <%=date.setDate(date.getDate()+1) %>
+</span>
+  <tr>
+    <td>Date Of Birth</td>
+    <td><input type="text" id="DateofBirth" name="DateofBirth" value="<%= date.toISOString().slice(0,10)%> "></td>
+  </tr>
+  <tr>
+    <td>Note</td>
+    <td><label style="color: red;"># To Edit Enter Date As ( "1998-09-01" ) #</label></td>
+  </tr>
+  <tr >
+    <td></td>
+      <td colspan="2">
+        <button  style="text-align: center;">
+        <span  >Update</span>
+        <i class='bx bx-chevron-down'></i>
+      </button>
+    </td>
+  </tr>    
+  </tr>
+</table>
+</center>
+<%  i++; }) }%>
+</form>
+</body>
+<script>
+ 
+
+</script>
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+      text-align: center;
+      align-items: center;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+      margin: 10px;
+    }
+    input
+    {
+      width: 300px;
+      height: 26px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+
+    }
+    tr:first-child
+    {
+      background-color: forestgreen;
+      color: rgb(239, 252, 234);
+      font-size: 22px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgb(128, 180, 38);
+    }
+
+    .profile-details{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background: #06e457;
+  border: 3px solid #03520f;
+  border-radius: 8px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+}
+.profile-details .admin_name{
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+  text-align: center;
+  
+}
+button
+{
+  height: 50px;
+  width: 180px;
+  background-color: forestgreen;
+  color:white ;
+  border-radius: 5px;
+  font-size: 23px;
+  font-weight: bold;
+
+}
+
+.no
+{
+  display: none;
+}
+    </style>
+
+
+</html>

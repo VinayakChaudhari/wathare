@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+<html>
+<head>
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>  
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'> 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+</head>
+
+<body style="background-image: url(https://img.freepik.com/free-photo/abstract-blur-defocused-bookshelf-library_1203-9640.jpg?t=st=1649254236~exp=1649254836~hmac=abd864aef5ec6db37ac10059113b0619e0bf9f09416c18bec4d3cd9696547cbb&w=996); background-repeat:no-repeat; background-position:top; background-size:cover;" class="body">
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#" style="font-size: 55px;">Educare</a>
+      </div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/aboutus">About</a></li>
+        <li><a href="/contactus">Contact</a></li>
+        <li>
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="getbutton()" >
+               Registration
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="list" style="display:none;">
+              <a class="dropdown-item" href="/register">Student</a><br>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/teacherreg">Teacher </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/login" class="active">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="login-page">
+  <div class="form">
+
+    <form method="post" action="" onsubmit="">
+      <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"  background="transparent"  speed="1"  style="justify-content: center;" loop  autoplay></lottie-player>
+      <h4 style="color: red;"><%=(typeof alertMsg!='undefined')? alertMsg:''%></h4><br>
+      <input type="text" name="email" id="email" placeholder="&#xf007; Username"/>
+      <input type="password" name="password" id="password" placeholder="&#xf023; Password"/>
+<!--
+      <div class="dropdown">
+        <button class="dropbtn" name="role">SELECT LOGIN</button>
+        <div class="dropdown-content" >
+          <input type="button" name="role" aria-valuemax="admin" />ADMIN
+          <a href="#" name="role" aria-valuemax="Student">STUDENT</a>
+          <a href="#" name="role" aria-valuemax="teacher">TEACHER</a>
+        </div>
+      </div>
+ -->    
+       <div class="dropdown">
+        <select name="role" id="role"> <label>Role</label>
+          <div class="dropdown-content" >
+          <option name="role" value="admin" >Admin</option>
+          <option name="role" value="student" >student</option>
+          <option name="role" value="teacher" >teacher</option>
+          </div>
+        </select>
+       </div>
+
+ 
+
+      <br>
+      <br>
+      <button onclick="">LOGIN</button>
+      <p class="message"></p>
+    </form>
+
+    <form class="login-form">
+      <button type="button" onclick="window.location.href='/register'">REGISTRATION</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+  <script>
+    function show(){
+      var password = document.getElementById("password");
+      var icon = document.querySelector(".fas")
+
+      // ========== Checking type of password ===========
+      if(password.type === "password"){
+        password.type = "text";
+      }
+      else {
+        password.type = "password";
+      }
+    };
+
+    function logcheck()
+    {
+      var pass=document.getElementById("password");
+     
+    }
+  //setInterval(getbutton(),10000)
+  function getbutton()
+  {
+    var list=document.getElementById("list");
+    list.style.display="list-item";
+    setInterval((close) =>
+   {
+    list.style.display="none";
+  }, 3000);
+  }
+   </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Details Form</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+
+</head>
+<body style="background-image: url(https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);background-position:top;  background-repeat:no-repeat; background-size:cover;" class="body">
+
+   
+      <br><br><br><br>
+<h2 style="font-size: 60px;color: #5c0249;font-weight:normal;"><center>Student Details</center></h2><center>
+  <br><br>
+    <table border="1"  cellspacing="10">
+        <tr>
+            <th>Sr No</th>
+            <th>Student Name</th>
+            <th> Address</th>
+            <th>Student Percentage</th>
+            <th>Branch</th>
+            <th>PhoneNo</th>
+            <th>Email I'D </th>
+           <!--<th>Password </th> --> 
+            <th>  Gender</th>
+            <th>Date of Birth</th>
+            <th colspan="2">Tools</th>
+        </tr>
+        
+        <%  if(StudentData.length!=0) { var i=1; StudentData.forEach(function(data){  %>
+        <tr>
+            <td><%=data.SrNo %></td>
+            <td><%=data.Name %></td>
+            <td><%=data.Address %></td>
+            <td><%=data.Marks %></td>
+            <td><%=data.Branch %></td>
+            <td><%=data.PhoneNo %></td>
+            <td><%=data.Email %></td>
+            <!--<td><%=data.Password %></td>-->
+            <td><%=data.Gender %></td>
+            <td><%=data.DateofBirth.toISOString().slice(0,10) %></td>
+            <td><a href="/Edit/<%=data.SrNo%>">Edit</a></td>
+            <td><a href="/delete/<%=data.SrNo%>" onclick=" confirm('seleted data will be delete permanently')">Delete</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </center>
+    </div>
+</body>
+<style>
+
+table
+{
+  text-align: center; 
+  font-size: 15px;
+  margin: 5px;
+  padding: 15px;
+  color: rgb(48, 3, 91);     
+  width: 70%; 
+  height: 50%;
+  border-collapse:collapse;
+  border-spacing: 0 15px;
+
+}
+th
+{
+  padding: 15px;
+  color: #360a2c;
+  width: 100px;
+
+}
+td{
+  padding: 15px;
+  width: 100px;
+}
+
+
+a{
+  height: 21px;
+  width: 50px;
+  text-decoration: none;
+  color: #f7f1f7;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: green;
+  transition: all 0.3s ease;
+}
+
+</style>
+
+</html>
